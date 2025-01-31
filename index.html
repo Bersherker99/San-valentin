@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para ti, Johana - Mes del Amor</title>
+    <style>
+        body {
+            font-family: 'Arial, sans-serif';
+            background: url('fondo-san-valentin.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #4a4a4a;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: rgba(255, 77, 77, 0.8);
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3.5rem;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
+
+        .intro-message {
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        p {
+            font-size: 1.6rem;
+            line-height: 1.8;
+        }
+
+        .heart-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .heart {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            position: relative;
+            transform: rotate(-45deg);
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1) rotate(-45deg);
+            }
+            50% {
+                transform: scale(1.2) rotate(-45deg);
+            }
+        }
+
+        .heart::before, .heart::after {
+            content: "";
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart::before {
+            top: -75px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 75px;
+            top: 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #ff6666;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff3333;
+        }
+
+        .warning-message {
+            font-size: 1rem;
+            color: #a94442;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(255, 77, 77, 0.8);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Felcicidades has sido seleccionada para recibir un trato exclusivo por este mes, así que... esto es para ti, Johana 💖</h1>
+    </header>
+
+    <div class="container">
+        <div class="intro-message">
+            <p>Febrero es el mes donde el amor florece; por tal razón mi corazón late con más fuerza porque tú, Johana, estás en él. Eres la razón de mis sonrisas, de mis sueños y de mis suspiros. Cada día de este mes está dedicado a recordarte lo especial que eres para mí.</p>
+        </div>
+
+        <div class="heart-container">
+            <div class="heart"></div>
+        </div>
+
+        <button onclick="mostrarSorpresa()">Descubre el Pensamiento de Hoy</button>
+        <p class="warning-message">Advertencia: los mensajes no siempre van a ser de amor.</p>
+
+        <div id="sorpresa" style="display: none; margin-top: 20px;">
+            <p id="mensaje" style="font-size: 2rem; color: #ff1a1a;"></p>
+        </div>
+
+        <audio id="music" src="tu-cancion-especial.mp3" loop></audio>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 - Un mes lleno de amor para ti, Johana</p>
+    </footer>
+
+    <script>
+        const mensajes = [
+            'Tu sonrisa ilumina mis días, Johana. 💖',
+            'Hoy es un buen día para decirte lo mucho que significas para mí. 🌹',
+            'Tu sonrisa ilumina mis días, Johana 💖',
+            'Cada momento contigo es un tesoro que guardo en mi corazón 🌹',
+            'Eres mi todo y mi razón de ser 😍',
+            'Contigo aprendí lo que significa el amor verdadero 💕'
+        ];
+
+        function mostrarSorpresa() {
+            const mensajeAleatorio = mensajes[Math.floor(Math.random() * mensajes.length)];
+            document.getElementById('mensaje').innerText = mensajeAleatorio;
+            document.getElementById('sorpresa').style.display = 'block';
+            document.getElementById('music').play();
+        }
+    </script>
+</body>
+</html>
